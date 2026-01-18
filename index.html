@@ -1,123 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bin2dec-dec2bin</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.cdnfonts.com/css/euclid-circular-b" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/reset.css">
-  <link rel="stylesheet" href="./styles/style.css">
-  <title>Bin2Dec & Dec2Bin</title>
-</head>
-
-<body>
-  <div class="balls-background">
-    <div class="images_outer">
-      <div class="images_sphere1">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="138px" height="138px"
-          viewBox="0 0 138 138" version="1.1">
-          <title>Oval Copy 3</title>
-          <defs>
-            <radialGradient cx="32.8715153%" cy="5.40411421%" fx="32.8715153%" fy="5.40411421%" r="98.2352199%"
-              id="radialGradient-1">
-              <stop stop-color="#B2D4F4" offset="0%" />
-              <stop stop-color="#6890CD" offset="100%" />
-            </radialGradient>
-            <circle id="path-2" cx="329" cy="189" r="53" />
-            <filter x="-20.8%" y="-22.6%" width="149.1%" height="149.1%" filterUnits="objectBoundingBox" id="filter-3">
-              <feOffset dx="4" dy="2" in="SourceAlpha" result="shadowOffsetOuter1" />
-              <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
-              <feColorMatrix values="0 0 0 0 0.248772673   0 0 0 0 0.346255955   0 0 0 0 0.698907382  0 0 0 0.5 0"
-                type="matrix" in="shadowBlurOuter1" />
-            </filter>
-          </defs>
-          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g id="Oval-Copy-3" transform="translate(-264.000000, -122.000000)">
-              <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2" />
-              <use fill="url(#radialGradient-1)" fill-rule="evenodd" xlink:href="#path-2" />
-            </g>
-          </g>
-        </svg>
-      </div>
-      <div class="images_sphere2">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="139px" height="139px"
-          viewBox="0 0 139 139" version="1.1">
-          <title>Oval</title>
-          <defs>
-            <radialGradient cx="32.8715153%" cy="5.40411421%" fx="32.8715153%" fy="5.40411421%" r="98.2352199%"
-              id="radialGradient-1">
-              <stop stop-color="#B2D4F4" offset="0%" />
-              <stop stop-color="#6890CD" offset="100%" />
-            </radialGradient>
-          </defs>
-          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g id="glassmo2" transform="translate(-572.000000, -58.000000)" fill="url(#radialGradient-1)">
-              <g id="Group" transform="translate(0.000000, -60.000000)">
-                <circle id="Oval" cx="641.5" cy="187.5" r="69.5" />
-              </g>
-            </g>
-          </g>
-        </svg>
-      </div>
-      <div class="images_sphere3">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="139px" height="139px"
-          viewBox="0 0 139 139" version="1.1">
-          <title>Oval</title>
-          <defs>
-            <radialGradient cx="32.8715153%" cy="5.40411421%" fx="32.8715153%" fy="5.40411421%" r="98.2352199%"
-              id="radialGradient-1">
-              <stop stop-color="#B2D4F4" offset="0%" />
-              <stop stop-color="#6890CD" offset="100%" />
-            </radialGradient>
-          </defs>
-          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g id="glassmo2" transform="translate(-572.000000, -58.000000)" fill="url(#radialGradient-1)">
-              <g id="Group" transform="translate(0.000000, -60.000000)">
-                <circle id="Oval" cx="641.5" cy="187.5" r="69.5" />
-              </g>
-            </g>
-          </g>
-        </svg>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <header class="card-header">
-      <div class="title">
-        <h1>Converter</h1>
-        <h2>Binary to Decimal</h2>
-      </div>
-      <div class="converter-type-buttons">
-        <button id="binary-to-decimal">Binary to Decimal</button>
-        <button class="active" id="decimal-to-binary">Decimal to Binary</button>
+  <body>
+    <header class="header__wrapper">
+      <div class="header__container">
+        <ul class="header__navigation">
+          <li class="header__navigation-item is-active">
+            <button>DECIMAL TO BINARY</button>
+          </li>
+          <li class="header__navigation-item">
+            <button>BINARY TO DECIMAL</button>
+          </li>
+        </ul>
       </div>
     </header>
-
-    <main class="card-body">
-      <form onsubmit="return check()" novalidate>
-        <fieldset>
-          <span class="input">
-            <label for="decimal">DECIMAL</label>
-            <input name="decimal" id="decimal" placeholder="Enter with a number" type="text" min="0" pattern="^[0-9]*">
-          </span>
-          <span class="input">
-            <label for="binary">BINARY</label>
-            <input name="binary" disabled id="binary" placeholder="Resultado" type="text" min="0" pattern="^[0-1]*">
-          </span>
-        </fieldset>
-        <div class="submit-button">
-          <input type="submit" value="CONVERT" />
-        </div>
-      </form>
-    </main>
-
-    <footer class="card-footer">
-    </footer>
-  </div>
-  <div id="cnumber" class="emsg"></div>
-  <script type="text/javascript" src="./script.js"></script>
-</body>
-
+    <div class="wrapper">
+      <main class="terminal"></main>
+      <footer class="terminal__footer"></footer>
+    </div>
+    <script type="module" src="/src/scripts/main.ts"></script>
+  </body>
 </html>

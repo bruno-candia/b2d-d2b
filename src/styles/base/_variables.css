@@ -1,0 +1,191 @@
+:root {
+  --color-primary: #26d52f;
+
+  --font-terminal: 'VT323', monospace;
+
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 3rem; /* 48px */
+  --text-6xl: 3.75rem; /* 60px */
+  --text-7xl: 4.5rem; /* 72px */
+
+  --leading-none: 1;
+  --leading-tight: 0.74; /* ~74% - display text */
+  --leading-snug: 0.9; /* ~90% - headings */
+  --leading-normal: 1.2; /* ~92% - body */
+  --leading-relaxed: 1.625;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.03em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.06em;
+
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  --space-0: 0;
+  --space-1: 0.125rem; /* 2px */
+  --space-2: 0.25rem; /* 4px */
+  --space-3: 0.375rem; /* 6px */
+  --space-4: 0.5rem; /* 8px */
+  --space-5: 0.625rem; /* 10px */
+  --space-6: 0.75rem; /* 12px */
+  --space-7: 0.875rem; /* 14px */
+  --space-8: 1rem; /* 16px */
+  --space-10: 1.25rem; /* 20px */
+  --space-12: 1.5rem; /* 24px */
+  --space-14: 1.75rem; /* 28px */
+  --space-16: 2rem; /* 32px */
+  --space-20: 2.5rem; /* 40px */
+  --space-24: 3rem; /* 48px */
+  --space-28: 3.5rem; /* 56px */
+  --space-32: 4rem; /* 64px */
+  --space-36: 4.5rem; /* 72px */
+  --space-40: 5rem; /* 80px */
+  --space-44: 5.5rem; /* 88px */
+  --space-48: 6rem; /* 96px */
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  --z-base: 0;
+  --z-above: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal: 400;
+  --z-tooltip: 500;
+
+  --terminal-gradient: linear-gradient(
+    0deg,
+    var(--color-primary) 0,
+    var(--color-primary) 2%,
+    var(--color-primary) 3%,
+    var(--color-primary) 5%,
+    #26d52f00 8%,
+    var(--color-primary) 9%,
+    var(--color-primary) 11%,
+    var(--color-primary) 13%,
+    var(--color-primary) 14%,
+    #26d52f00 17%,
+    var(--color-primary) 19%,
+    var(--color-primary) 20%,
+    var(--color-primary) 22%,
+    var(--color-primary) 23%,
+    #26d52f00 27%,
+    var(--color-primary) 28%,
+    var(--color-primary) 30%,
+    var(--color-primary) 31%,
+    var(--color-primary) 33%,
+    #26d52f00 36%,
+    var(--color-primary) 38%,
+    var(--color-primary) 39%,
+    var(--color-primary) 41%,
+    var(--color-primary) 42%,
+    #26d52f00 45%,
+    var(--color-primary) 47%,
+    var(--color-primary) 48%,
+    var(--color-primary) 50%,
+    var(--color-primary) 52%,
+    #26d52f00 55%,
+    var(--color-primary) 56%,
+    var(--color-primary) 58%,
+    var(--color-primary) 59%,
+    var(--color-primary) 61%,
+    #26d52f00 64%,
+    var(--color-primary) 66%,
+    var(--color-primary) 67%,
+    var(--color-primary) 69%,
+    var(--color-primary) 70%,
+    #26d52f00 73%,
+    var(--color-primary) 75%,
+    var(--color-primary) 77%,
+    var(--color-primary) 78%,
+    var(--color-primary) 80%,
+    #26d52f00 83%,
+    var(--color-primary) 84%,
+    var(--color-primary) 86%,
+    var(--color-primary) 88%,
+    var(--color-primary) 89%,
+    #26d52f00 92%,
+    var(--color-primary) 94%,
+    var(--color-primary) 95%,
+    var(--color-primary) 97%,
+    var(--color-primary) 98%,
+    #26d52f00 100%
+  );
+
+  --terminal-gradient-hover: linear-gradient(
+    0deg,
+    black 0,
+    black 2%,
+    black 3%,
+    black 5%,
+    black 8%,
+    black 9%,
+    black 11%,
+    black 13%,
+    black 14%,
+    black 17%,
+    black 19%,
+    black 20%,
+    black 22%,
+    black 23%,
+    black 27%,
+    black 28%,
+    black 30%,
+    black 31%,
+    black 33%,
+    black 36%,
+    black 38%,
+    black 39%,
+    black 41%,
+    black 42%,
+    black 45%,
+    black 47%,
+    black 48%,
+    black 50%,
+    black 52%,
+    black 55%,
+    black 56%,
+    black 58%,
+    black 59%,
+    black 61%,
+    black 64%,
+    black 66%,
+    black 67%,
+    black 69%,
+    black 70%,
+    black 73%,
+    black 75%,
+    black 77%,
+    black 78%,
+    black 80%,
+    black 83%,
+    black 84%,
+    black 86%,
+    black 88%,
+    black 89%,
+    black 92%,
+    black 94%,
+    black 95%,
+    black 97%,
+    black 98%,
+    #00000000 100%
+  );
+}

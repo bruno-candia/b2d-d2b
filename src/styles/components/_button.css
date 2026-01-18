@@ -1,0 +1,17 @@
+.btn {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  border-width: 2px;
+  border-image: var(--terminal-gradient);
+  background: var(--terminal-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.btn:hover {
+  border: 2px solid;
+  color: var(--terminal-gradient-hover);
+  background: var(--terminal-gradient);
+}
