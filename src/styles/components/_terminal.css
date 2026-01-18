@@ -1,6 +1,6 @@
 #terminal {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.5fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.35fr);
   height: 90svh;
   width: 100%;
   padding: var(--space-12);
