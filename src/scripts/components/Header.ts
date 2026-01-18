@@ -3,7 +3,7 @@ export class Header {
   private tabButtons: NodeListOf<HTMLElement>;
 
   constructor() {
-    this.element = document.querySelector('.header__wrapper');
+    this.element = document.querySelector('#header');
     this.tabButtons = document.querySelectorAll('.header__navigation-item');
   }
 

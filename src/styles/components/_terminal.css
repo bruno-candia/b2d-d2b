@@ -1,5 +1,31 @@
-.terminal {
+#terminal {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   height: 90svh;
+  width: 100%;
+  padding: var(--space-12);
+}
+
+.terminal__convert-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--space-6);
+}
+
+.terminal__calculation {
+  display: grid;
+  grid-template-rows: 0.25fr 1fr 0.25fr;
+}
+
+.terminal__form-container {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.terminal__form-container .field {
+  flex: 1;
 }

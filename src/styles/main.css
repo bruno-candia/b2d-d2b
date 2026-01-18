@@ -6,6 +6,7 @@
 @import './components/_header.css';
 @import './components/_terminal.css';
 @import './components/_button.css';
+@import './components/_input.css';
 
 body {
   font-family: var(--font-terminal);
@@ -54,7 +55,8 @@ h3 {
   font-size: var(--text-3xl);
 }
 
-p {
+p,
+input::placeholder {
   font-family: var(--font-body);
   font-size: var(--text-xl);
   line-height: var(--leading-normal);
