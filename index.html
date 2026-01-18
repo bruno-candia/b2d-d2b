@@ -11,10 +11,10 @@
     <header id="header">
       <div class="header__container">
         <ul class="header__navigation">
-          <li class="header__navigation-item is-active">
+          <li class="header__navigation-item is-active" data-tab="DECIMAL_TO_BINARY">
             <button>DECIMAL TO BINARY</button>
           </li>
-          <li class="header__navigation-item">
+          <li class="header__navigation-item" data-tab="BINARY_TO_DECIMAL">
             <button>BINARY TO DECIMAL</button>
           </li>
         </ul>
@@ -22,15 +22,36 @@
     </header>
     <div class="wrapper">
       <main id="terminal">
-        <section id="terminal__calculation">
-          <form class="terminal__convert-form">
+        <section class="terminal__layout">
+          <form class="converter-form">
             <h3>DECIMAL INPUT</h3>
-            <div class="terminal__form-container">
-              <label for="value" class="terminal__form-label">&&gt;</label>
-              <input class="field" type="number" id="value" name="value" />
-              <button class="btn terminal__submit-button" type="submit">CONVERTE</button>
+            <div class="converter-form__container">
+              <label for="value" class="ui-label">&&gt;</label>
+              <input class="ui-input" type="number" id="value" name="value" />
+              <button class="ui-btn converter-form__button" type="submit">CONVERTE</button>
             </div>
           </form>
+
+          <div class="calculation-display">
+            <h3>CALCULATION PROCESS</h3>
+            <div class="calculation-display__process">
+              <div>
+                <p>RESULT</p>
+                <textarea id="calculation-display__result-step"></textarea>
+              </div>
+              <div>
+                <p>CALCULATION</p>
+                <textarea id="calculation-display__calculation-step"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="result-display">
+            <h3>BINARY RESULT</h3>
+            <div class="result-display__container">
+              <p for="value" class="ui-label">&&gt;</p>
+              <input class="ui-input" type="number" id="result" name="result" disabled />
+            </div>
+          </div>
         </section>
       </main>
       <footer class="terminal__footer"></footer>

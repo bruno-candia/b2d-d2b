@@ -1,4 +1,4 @@
-.field {
+.ui-input {
   border: 0;
   font-family: var(--font-body);
   font-size: var(--text-3xl);
@@ -11,17 +11,17 @@
   padding: var(--space-2) 0;
 }
 
-.field::-webkit-outer-spin-button,
-.field::-webkit-inner-spin-button {
+.ui-input::-webkit-outer-spin-button,
+.ui-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.field[type='number'] {
+.ui-input[type='number'] {
   -moz-appearance: textfield;
 }
 
-.terminal__form-label {
+.ui-label {
   font-family: var(--font-body);
   font-size: var(--text-3xl);
   line-height: var(--leading-normal);

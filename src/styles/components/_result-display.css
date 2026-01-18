@@ -1,0 +1,18 @@
+.result-display {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--space-6);
+}
+
+.result-display__container {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.result-display__container .ui-input {
+  flex: 1;
+}

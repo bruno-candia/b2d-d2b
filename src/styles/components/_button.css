@@ -1,4 +1,4 @@
-.btn {
+.ui-btn {
   font-family: var(--font-body);
   font-size: var(--text-2xl);
   line-height: var(--leading-normal);
@@ -12,7 +12,7 @@
   color: transparent;
 }
 
-.btn:hover {
+.ui-btn:hover {
   border: 2px solid;
   color: var(--terminal-gradient-hover);
   background: var(--terminal-gradient);
