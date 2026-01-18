@@ -17,7 +17,7 @@ body {
   font-size: var(--text-base);
   line-height: var(--leading-normal);
   color: var(--color-primary);
-  background-image: url('/public/terminal-background.png');
+  background-image: url('/terminal-background.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

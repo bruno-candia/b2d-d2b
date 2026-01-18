@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 100%;
   gap: var(--space-6);
+  position: relative;
 }
 
 .converter-form__container {
@@ -15,4 +16,11 @@
 
 .converter-form__container .ui-input {
   flex: 1;
+}
+
+.ui-error {
+  position: absolute;
+  color: var(--color-primary);
+  transform: translate(50%, 50%);
+  right: 0;
 }

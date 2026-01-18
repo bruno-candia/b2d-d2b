@@ -32,4 +32,15 @@
   padding: var(--space-2) 0;
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.ui-error {
+  position: absolute;
+  color: var(--color-error);
+  right: 46%;
+  bottom: -12%;
+  width: 100%;
+  text-align: left;
+  transform: translate(50%, 50%);
 }
