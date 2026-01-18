@@ -12,7 +12,8 @@
   color: transparent;
 }
 
-.ui-btn:hover {
+.ui-btn:hover,
+.ui-btn.is-enabled {
   border: 2px solid;
   color: var(--terminal-gradient-hover);
   background: var(--terminal-gradient);

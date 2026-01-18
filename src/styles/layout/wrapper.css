@@ -1,5 +1,6 @@
 .wrapper {
-  width: 95svw;
+  width: 100%;
+  max-width: 1920px;
+  margin-inline: auto;
   height: 100svh;
-  margin-bottom: 5svh;
 }

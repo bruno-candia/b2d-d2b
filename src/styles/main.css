@@ -8,6 +8,7 @@
 @import './components/_converter-form.css';
 @import './components/_calculation-display.css';
 @import './components/_result-display.css';
+@import './components/_settings.css';
 @import './components/_button.css';
 @import './components/_input.css';
 
@@ -29,7 +30,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 1980px;
 }
 
 h1,

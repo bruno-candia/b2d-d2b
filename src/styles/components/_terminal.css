@@ -1,14 +1,22 @@
 #terminal {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.5fr);
   height: 90svh;
   width: 100%;
   padding: var(--space-12);
 }
 
-.terminal__layout {
+.terminal__calculation,
+.terminal__settings {
   display: grid;
   grid-template-rows: 0.1fr 1fr 0.1fr;
+  padding: 0 var(--space-12);
+}
+
+.terminal__calculation {
   border-right: 1px solid var(--color-primary-300);
-  padding-right: var(--space-12);
+}
+
+.terminal__settings {
+  border-left: 1px solid var(--color-primary-300);
 }

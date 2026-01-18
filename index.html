@@ -22,13 +22,13 @@
     </header>
     <div class="wrapper">
       <main id="terminal">
-        <section class="terminal__layout">
-          <form class="converter-form">
+        <section class="terminal__calculation">
+          <form id="converter-form">
             <h3>DECIMAL INPUT</h3>
             <div class="converter-form__container">
               <label for="value" class="ui-label">&&gt;</label>
               <input class="ui-input" type="number" id="value" name="value" />
-              <button class="ui-btn converter-form__button" type="submit">CONVERTE</button>
+              <button class="ui-btn" type="submit">CONVERTE</button>
             </div>
           </form>
 
@@ -36,12 +36,12 @@
             <h3>CALCULATION PROCESS</h3>
             <div class="calculation-display__process">
               <div>
-                <p>RESULT</p>
-                <textarea disabled id="calculation-display__result-step"></textarea>
-              </div>
-              <div>
                 <p>CALCULATION</p>
                 <textarea disabled id="calculation-display__calculation-step"></textarea>
+              </div>
+              <div>
+                <p>RESULT</p>
+                <textarea disabled id="calculation-display__result-step"></textarea>
               </div>
             </div>
           </div>
@@ -50,6 +50,16 @@
             <div class="result-display__container">
               <p for="value" class="ui-label">&&gt;</p>
               <input class="ui-input" type="number" id="result" name="result" disabled />
+            </div>
+          </div>
+        </section>
+        <section class="terminal__settings">
+          <div id="settings">
+            <h3>SETTINGS</h3>
+            <div class="settings__menu">
+              <p>DISPLAY CALCULATION</p>
+              <button class="ui-btn is-enabled" type="submit">ENABLED</button>
+              <button class="ui-btn" type="submit">DISABLED</button>
             </div>
           </div>
         </section>

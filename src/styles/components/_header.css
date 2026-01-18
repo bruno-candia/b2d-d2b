@@ -1,5 +1,5 @@
 #header {
-  margin-top: var(--space-24);
+  margin-top: var(--space-12);
   width: 100%;
   position: relative;
 }
@@ -9,7 +9,8 @@
   margin: 0 auto;
   padding: 0 var(--space-12);
   justify-content: flex-start;
-  width: 95svw;
+  width: 95vw;
+  max-width: 1920px;
   gap: var(--space-6);
   position: relative;
   overflow: hidden;
