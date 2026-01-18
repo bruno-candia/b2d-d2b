@@ -6,11 +6,11 @@
   border-style: solid;
   border-image: linear-gradient(
       180deg,
-      var(--color-primary) 0,
+      var(--color-primary-300) 0,
       #26d52f00 20%,
       #26d52f00 50%,
       #26d52f00 80%,
-      var(--color-primary) 100%
+      var(--color-primary-300) 100%
     )
     1;
   gap: var(--space-6);
@@ -45,6 +45,7 @@
   font-family: var(--font-terminal);
   font-size: var(--text-xl);
   border-width: 2px;
+  cursor: not-allowed;
   border-style: solid;
   border-image: linear-gradient(
       180deg,

@@ -15,4 +15,5 @@
 
 .result-display__container .ui-input {
   flex: 1;
+  cursor: not-allowed;
 }

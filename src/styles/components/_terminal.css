@@ -9,6 +9,6 @@
 .terminal__layout {
   display: grid;
   grid-template-rows: 0.1fr 1fr 0.1fr;
-  border-right: 1px solid var(--color-primary);
+  border-right: 1px solid var(--color-primary-300);
   padding-right: var(--space-12);
 }
