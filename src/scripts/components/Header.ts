@@ -1,16 +1,16 @@
-import type { ConversionTypeState } from '../services/state/ConversionState';
+import type { ConversionState } from '../services/state/ConversionState';
 import type { CONVERSION_TYPE } from '../types/ConversionType';
 
 export class Header {
   private element: HTMLElement | null;
   private tabButtons: NodeListOf<HTMLElement>;
 
-  private conversionStateService: ConversionTypeState;
+  private conversionState: ConversionState;
 
-  constructor(conversionStateService: ConversionTypeState) {
+  constructor(conversionState: ConversionState) {
     this.element = document.querySelector('#header');
     this.tabButtons = document.querySelectorAll('.header__navigation-item');
-    this.conversionStateService = conversionStateService;
+    this.conversionState = conversionState;
   }
 
   hydrate(): void {
@@ -36,7 +36,7 @@ export class Header {
     const tabType = clickedItem.dataset['tab'];
 
     if (tabType) {
-      this.conversionStateService.setType(tabType as CONVERSION_TYPE);
+      this.conversionState.setType(tabType as CONVERSION_TYPE);
     }
   }
 }

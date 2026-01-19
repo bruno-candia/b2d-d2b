@@ -24,10 +24,10 @@
       <main id="terminal">
         <section class="terminal__calculation">
           <form id="converter-form">
-            <h3 id="converter-form__title">DECIMAL INPUT</h3>
+            <h3 id="converter-form__title">DECIMAL</h3>
             <div class="converter-form__container">
               <label for="value" class="ui-label">&&gt;</label>
-              <input class="ui-input" type="number" id="value" name="value" />
+              <input class="ui-input" type="text" id="value" name="value" inputmode="numeric" />
               <span class="ui-error"></span>
               <button class="ui-btn" type="submit">CONVERTE</button>
             </div>
@@ -47,10 +47,17 @@
             </div>
           </div>
           <div id="result-display">
-            <h3 id="result-display__title">BINARY RESULT</h3>
+            <h3 id="result-display__title">BINARY</h3>
             <div class="result-display__container">
               <p for="value" class="ui-label">&&gt;</p>
-              <input class="ui-input" type="number" id="result" name="result" disabled />
+              <input
+                class="ui-input"
+                type="text"
+                id="result"
+                name="result"
+                inputmode="numeric"
+                disabled
+              />
             </div>
           </div>
         </section>

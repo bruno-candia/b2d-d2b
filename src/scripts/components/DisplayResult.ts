@@ -1,23 +1,31 @@
-import type { ConversionTypeState } from '../services/state/ConversionState';
-import { CONVERSION_TYPE } from '../types/ConversionType';
+import type { ConversionState } from '../services/state/ConversionState';
+import { updateTitle } from '../utils/updateTitle';
 
 export class DisplayResult {
   private element: HTMLFormElement | null;
   private resultTitle: HTMLHeadingElement | null;
+  private resultInput: HTMLInputElement | null;
 
-  private conversionStateService: ConversionTypeState;
+  private conversionState: ConversionState;
 
-  constructor(conversionStateService: ConversionTypeState) {
+  constructor(conversionState: ConversionState) {
     this.element = document.querySelector('#result-display');
     this.resultTitle = document.querySelector('#result-display__title');
-    this.conversionStateService = conversionStateService;
+    this.resultInput = document.querySelector('#result');
+
+    this.conversionState = conversionState;
   }
 
   hydrate(): void {
     if (!this.element) return;
     this.bindEvents();
-    this.conversionStateService.subscribe((newState) => {
-      this.handleCalculationTitle(newState.type);
+    this.conversionState.subscribeToType((newType) => {
+      if (!this.resultTitle) return;
+      updateTitle(this.resultTitle, newType);
+    });
+
+    this.conversionState.subscribeToResult((newResult) => {
+      this.updateResultValue(newResult);
     });
   }
 
@@ -25,14 +33,9 @@ export class DisplayResult {
     if (!this.element) return;
   }
 
-  private handleCalculationTitle(newState: CONVERSION_TYPE) {
-    if (!this.resultTitle) return;
-
-    const FORM_TITLES = {
-      [CONVERSION_TYPE.DECIMAL_TO_BINARY]: 'BINARY RESULT',
-      [CONVERSION_TYPE.BINARY_TO_DECIMAL]: 'DECIMAL RESULT',
-    };
-
-    this.resultTitle.innerText = FORM_TITLES[newState];
+  private updateResultValue(newResult: string) {
+    if (!this.resultInput) return;
+    console.log(newResult);
+    this.resultInput.value = newResult;
   }
 }

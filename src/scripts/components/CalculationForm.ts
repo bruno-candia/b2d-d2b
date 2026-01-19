@@ -1,49 +1,67 @@
-import type { ConversionTypeState } from '../services/state/ConversionState';
+import type { ConversionState } from '../services/state/ConversionState';
 import { CONVERSION_TYPE } from '../types/ConversionType';
+import { updateTitle } from '../utils/updateTitle';
 
 export class CalculationForm {
-  private element: HTMLFormElement | null;
+  private formElement: HTMLFormElement | null;
   private formTitle: HTMLHeadingElement | null;
+  private valueInput: HTMLInputElement | null;
 
-  private conversionStateService: ConversionTypeState;
+  private conversionState: ConversionState;
 
-  constructor(conversionStateService: ConversionTypeState) {
-    this.element = document.querySelector('#converter-form');
+  constructor(conversionState: ConversionState) {
+    this.formElement = document.querySelector('#converter-form');
     this.formTitle = document.querySelector('#converter-form__title');
-    this.conversionStateService = conversionStateService;
+    this.valueInput = document.querySelector('#value');
+    this.conversionState = conversionState;
   }
 
   hydrate(): void {
-    if (!this.element) return;
+    if (!this.formElement) return;
     this.bindEvents();
-    this.conversionStateService.subscribe((newState) => {
-      this.handleCalculationTitle(newState.type);
+    this.conversionState.subscribeToType((newType) => {
+      if (!this.formTitle) return;
+      updateTitle(this.formTitle, newType);
     });
   }
 
   private bindEvents(): void {
-    if (!this.element) return;
-    this.element.addEventListener('submit', (event) => this.handleSubmit(event));
+    if (!this.formElement) return;
+    this.formElement.addEventListener('submit', (event) => this.handleSubmit(event));
+
+    if (!this.valueInput) return;
+    this.valueInput.addEventListener('input', (event) => this.handleValueInput(event));
+  }
+
+  private handleValueInput(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    const currentType = this.conversionState.state.type;
+    const currentValueTyped = inputElement.value;
+
+    if (currentType === CONVERSION_TYPE.BINARY_TO_DECIMAL) {
+      const cleanValue = currentValueTyped.replace(/[^01]/g, '');
+
+      if (currentValueTyped != cleanValue) {
+        inputElement.value = cleanValue;
+      }
+    }
+
+    if (currentType === CONVERSION_TYPE.DECIMAL_TO_BINARY) {
+      const cleanValue = currentValueTyped.replace(/[^0-9]/g, '');
+
+      if (currentValueTyped != cleanValue) {
+        inputElement.value = cleanValue;
+      }
+    }
   }
 
   private handleSubmit(event: Event) {
     event.preventDefault();
-    const formData = new FormData(this.element!);
-    const fieldValue = Number(formData.get('value'));
+    const formData = new FormData(this.formElement!);
+    const fieldValue = String(formData.get('value'));
 
     if (!fieldValue) return;
 
-    console.log(fieldValue);
-  }
-
-  private handleCalculationTitle(newState: CONVERSION_TYPE) {
-    if (!this.formTitle) return;
-
-    const FORM_TITLES = {
-      [CONVERSION_TYPE.DECIMAL_TO_BINARY]: 'DECIMAL INPUT',
-      [CONVERSION_TYPE.BINARY_TO_DECIMAL]: 'BINARY INPUT',
-    };
-
-    this.formTitle.innerText = FORM_TITLES[newState];
+    this.conversionState.setInput(fieldValue);
   }
 }

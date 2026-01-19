@@ -1,36 +1,67 @@
 import { CONVERSION_TYPE, type State } from '../../types/ConversionType';
 
-type Listener = (state: State) => void;
-
-export class ConversionTypeState {
+export class ConversionState {
   private _state: State = {
     type: CONVERSION_TYPE.DECIMAL_TO_BINARY,
     input: '',
     result: '',
     history: [],
   };
-  private _arrayOfListeners: Listener[];
+  private _typeListener: ((type: CONVERSION_TYPE) => void)[] = [];
+  private _inputListener: ((input: string) => void)[] = [];
+  private _resultListener: ((type: string) => void)[] = [];
 
   constructor() {
-    this._arrayOfListeners = [];
+    this._typeListener = [];
+    this._inputListener = [];
+    this._resultListener = [];
   }
 
   get state() {
     return this._state;
   }
 
-  setType(newMode: CONVERSION_TYPE) {
-    if (newMode && newMode != this._state.type) {
-      this._state.type = newMode;
-      this.notifyAll();
+  setType(newType: CONVERSION_TYPE) {
+    if (newType && newType != this._state.type) {
+      this._state.type = newType;
+      this.notifyType();
     }
   }
 
-  subscribe(callback: Listener) {
-    this._arrayOfListeners.push(callback);
+  setInput(value: string) {
+    if (Number(value) > 0) {
+      this._state.input = value;
+      this.notifyInput();
+    }
   }
 
-  private notifyAll() {
-    this._arrayOfListeners.forEach((fn) => fn(this._state));
+  setResult(result: string) {
+    if (Number(result) > 0) {
+      this._state.result = result;
+      this.notifyResult();
+    }
+  }
+
+  subscribeToType(callback: (type: CONVERSION_TYPE) => void) {
+    this._typeListener.push(callback);
+  }
+
+  subscribeToInput(callback: (input: string) => void) {
+    this._inputListener.push(callback);
+  }
+  subscribeToResult(callback: (result: string) => void) {
+    this._resultListener.push(callback);
+  }
+
+  private notifyType() {
+    this._typeListener.forEach((fn) => fn(this._state.type));
+  }
+
+  private notifyInput() {
+    this._inputListener.forEach((fn) => fn(this._state.input));
+  }
+
+  private notifyResult() {
+    this._resultListener.forEach((fn) => fn(this._state.result));
   }
 }
