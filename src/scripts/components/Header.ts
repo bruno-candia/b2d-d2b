@@ -1,4 +1,4 @@
-import type { ConversionTypeState } from '../services/ConversionTypeState';
+import type { ConversionTypeState } from '../services/state/ConversionState';
 import type { CONVERSION_TYPE } from '../types/ConversionType';
 
 export class Header {
@@ -36,7 +36,7 @@ export class Header {
     const tabType = clickedItem.dataset['tab'];
 
     if (tabType) {
-      this.conversionStateService.setNewMode(tabType as CONVERSION_TYPE);
+      this.conversionStateService.setType(tabType as CONVERSION_TYPE);
     }
   }
 }

@@ -1,4 +1,4 @@
-import type { ConversionTypeState } from '../services/ConversionTypeState';
+import type { ConversionTypeState } from '../services/state/ConversionState';
 import { CONVERSION_TYPE } from '../types/ConversionType';
 
 export class CalculationForm {
@@ -17,8 +17,7 @@ export class CalculationForm {
     if (!this.element) return;
     this.bindEvents();
     this.conversionStateService.subscribe((newState) => {
-      console.log(newState);
-      this.handleCalculationTitle(newState);
+      this.handleCalculationTitle(newState.type);
     });
   }
 

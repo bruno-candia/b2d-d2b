@@ -1,6 +1,6 @@
 import { Header } from '@components/Header';
 import { CalculationForm } from '@/scripts/components/CalculationForm';
-import { ConversionTypeState } from '../services/ConversionTypeState';
+import { ConversionTypeState } from '../services/state/ConversionState';
 import { DisplayResult } from '../components/DisplayResult';
 
 export class App {
