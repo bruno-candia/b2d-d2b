@@ -8,7 +8,7 @@ export class ConversionTypeState {
 
   constructor() {
     this._arrayOfListeners = [];
-    this._currentState = CONVERSION_TYPE.DEC_TO_BIN;
+    this._currentState = CONVERSION_TYPE.DECIMAL_TO_BINARY;
   }
 
   get state() {
