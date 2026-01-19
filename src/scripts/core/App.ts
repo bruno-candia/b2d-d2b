@@ -1,17 +1,21 @@
 import { Header } from '@components/Header';
-import { FormCalculation } from '@components/FormCalculation';
+import { CalculationForm } from '@/scripts/components/CalculationForm';
+import { ConversionTypeState } from '../services/ConversionTypeState';
 
 export class App {
   private header: Header;
-  private formCalculation: FormCalculation;
+  private calculationForm: CalculationForm;
+
+  private conversionState: ConversionTypeState;
 
   constructor() {
-    this.header = new Header();
-    this.formCalculation = new FormCalculation();
+    this.conversionState = new ConversionTypeState();
+    this.header = new Header(this.conversionState);
+    this.calculationForm = new CalculationForm(this.conversionState);
   }
 
   hydrate(): void {
     this.header.hydrate();
-    this.formCalculation.hydrate();
+    this.calculationForm.hydrate();
   }
 }

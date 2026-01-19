@@ -1,10 +1,16 @@
+import type { ConversionTypeState } from '../services/ConversionTypeState';
+import type { CONVERSION_TYPE } from '../types/ConversionType';
+
 export class Header {
   private element: HTMLElement | null;
   private tabButtons: NodeListOf<HTMLElement>;
 
-  constructor() {
+  private conversionStateService: ConversionTypeState;
+
+  constructor(conversionStateService: ConversionTypeState) {
     this.element = document.querySelector('#header');
     this.tabButtons = document.querySelectorAll('.header__navigation-item');
+    this.conversionStateService = conversionStateService;
   }
 
   hydrate(): void {
@@ -26,5 +32,11 @@ export class Header {
     });
 
     clickedItem.classList.add('is-active');
+
+    const tabType = clickedItem.dataset['tab'];
+
+    if (tabType) {
+      this.conversionStateService.setNewMode(tabType as CONVERSION_TYPE);
+    }
   }
 }
