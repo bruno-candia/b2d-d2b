@@ -1,23 +1,23 @@
 import type { ConversionState } from '../services/state/ConversionState';
 import { updateTitle } from '../utils/updateTitle';
 
-export class DisplayResult {
-  private element: HTMLFormElement | null;
+export class ConverterOutput {
+  private resultElement: HTMLFormElement | null;
   private resultTitle: HTMLHeadingElement | null;
   private resultInput: HTMLInputElement | null;
 
   private conversionState: ConversionState;
 
   constructor(conversionState: ConversionState) {
-    this.element = document.querySelector('#result-display');
-    this.resultTitle = document.querySelector('#result-display__title');
+    this.resultElement = document.querySelector('#converter-output');
+    this.resultTitle = document.querySelector('#converter-output__title');
     this.resultInput = document.querySelector('#result');
 
     this.conversionState = conversionState;
   }
 
   hydrate(): void {
-    if (!this.element) return;
+    if (!this.resultElement) return;
     this.bindEvents();
     this.conversionState.subscribeToType((newType) => {
       if (!this.resultTitle) return;
@@ -30,7 +30,7 @@ export class DisplayResult {
   }
 
   private bindEvents(): void {
-    if (!this.element) return;
+    if (!this.resultElement) return;
   }
 
   private updateResultValue(newResult: string) {

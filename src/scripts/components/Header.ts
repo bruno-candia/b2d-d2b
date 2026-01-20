@@ -2,19 +2,19 @@ import type { ConversionState } from '../services/state/ConversionState';
 import type { CONVERSION_TYPE } from '../types/ConversionType';
 
 export class Header {
-  private element: HTMLElement | null;
+  private headerElement: HTMLElement | null;
   private tabButtons: NodeListOf<HTMLElement>;
 
   private conversionState: ConversionState;
 
   constructor(conversionState: ConversionState) {
-    this.element = document.querySelector('#header');
+    this.headerElement = document.querySelector('#header');
     this.tabButtons = document.querySelectorAll('.header__navigation-item');
     this.conversionState = conversionState;
   }
 
   hydrate(): void {
-    if (!this.element) return;
+    if (!this.headerElement) return;
     this.bindEvents();
   }
 

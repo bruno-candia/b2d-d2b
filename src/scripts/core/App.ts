@@ -1,31 +1,40 @@
 import { Header } from '@components/Header';
-import { CalculationForm } from '@/scripts/components/CalculationForm';
+import { ConverterInput } from '@/scripts/components/ConverterInput';
 import { ConversionState } from '../services/state/ConversionState';
-import { DisplayResult } from '../components/DisplayResult';
+import { ConverterOutput } from '../components/ConverterOutput';
 import { ConversionCalculationService } from '../services/ConversionCalculationService';
+import { SettingsPanel } from '../components/SettingsPanel';
+import { SettingsState } from '../services/state/SettingsState';
+import { CalculationSteps } from '../components/CalculationSteps';
 
 export class App {
   private conversionState: ConversionState;
-
-  private conversionCalculationService: ConversionCalculationService;
+  private settingsState: SettingsState;
 
   private header: Header;
-  private calculationForm: CalculationForm;
-  private displayResult: DisplayResult;
+  private converterInput: ConverterInput;
+  private calculationSteps: CalculationSteps;
+  private converterOutput: ConverterOutput;
+  private settingsPanel: SettingsPanel;
 
   constructor() {
     this.conversionState = new ConversionState();
+    this.settingsState = new SettingsState();
 
-    this.conversionCalculationService = new ConversionCalculationService(this.conversionState);
+    new ConversionCalculationService(this.conversionState);
 
     this.header = new Header(this.conversionState);
-    this.calculationForm = new CalculationForm(this.conversionState);
-    this.displayResult = new DisplayResult(this.conversionState, this.conversionCalculationService);
+    this.converterInput = new ConverterInput(this.conversionState);
+    this.calculationSteps = new CalculationSteps(this.settingsState);
+    this.converterOutput = new ConverterOutput(this.conversionState);
+    this.settingsPanel = new SettingsPanel(this.settingsState);
   }
 
   hydrate(): void {
     this.header.hydrate();
-    this.calculationForm.hydrate();
-    this.displayResult.hydrate();
+    this.converterInput.hydrate();
+    this.calculationSteps.hydrate();
+    this.converterOutput.hydrate();
+    this.settingsPanel.hydrate();
   }
 }

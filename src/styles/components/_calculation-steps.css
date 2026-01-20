@@ -1,6 +1,6 @@
-.calculation-display {
-  margin: var(--space-12) 0;
+#calculation-steps {
   padding: var(--space-12);
+  margin-bottom: var(--space-12);
   border-width: 2px;
   width: 100%;
   border-style: solid;
@@ -18,14 +18,14 @@
   flex-direction: column;
 }
 
-.calculation-display__process {
+.calculation-steps__process {
   display: flex;
   width: 100%;
   height: 100%;
   gap: var(--space-6);
 }
 
-.calculation-display__process div {
+.calculation-steps__process div {
   flex: 1;
   outline: none;
   display: flex;
@@ -34,7 +34,7 @@
   height: 100%;
 }
 
-.calculation-display__process textarea {
+.calculation-steps__process textarea {
   flex: 1;
   resize: none;
   width: 100%;

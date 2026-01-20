@@ -1,11 +1,11 @@
-#result-display {
+#converter-output {
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: var(--space-6);
 }
 
-.result-display__container {
+.converter-output__container {
   display: flex;
   width: 100%;
   align-items: stretch;
@@ -13,7 +13,7 @@
   gap: var(--space-4);
 }
 
-.result-display__container .ui-input {
+.converter-output__container .ui-input {
   flex: 1;
   cursor: not-allowed;
 }

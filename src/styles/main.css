@@ -6,9 +6,9 @@
 @import './components/_header.css';
 @import './components/_terminal.css';
 @import './components/_converter-form.css';
-@import './components/_calculation-display.css';
-@import './components/_result-display.css';
-@import './components/_settings.css';
+@import './components/_calculation-steps.css';
+@import './components/_converter-output.css';
+@import './components/_settings-panel.css';
 @import './components/_button.css';
 @import './components/_input.css';
 

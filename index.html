@@ -33,22 +33,22 @@
             </div>
           </form>
 
-          <div class="calculation-display">
+          <div id="calculation-steps">
             <h3>CALCULATION PROCESS</h3>
-            <div class="calculation-display__process">
+            <div class="calculation-steps__process">
               <div>
                 <p>CALCULATION</p>
-                <textarea disabled id="calculation-display__calculation-step"></textarea>
+                <textarea disabled id="calculation-steps__calculation-step"></textarea>
               </div>
               <div>
                 <p>RESULT</p>
-                <textarea disabled id="calculation-display__result-step"></textarea>
+                <textarea disabled id="calculation-steps__result-step"></textarea>
               </div>
             </div>
           </div>
-          <div id="result-display">
-            <h3 id="result-display__title">BINARY</h3>
-            <div class="result-display__container">
+          <div id="converter-output">
+            <h3 id="converter-output__title">BINARY</h3>
+            <div class="converter-output__container">
               <p for="value" class="ui-label">&&gt;</p>
               <input
                 class="ui-input"
@@ -61,14 +61,12 @@
             </div>
           </div>
         </section>
-        <section class="terminal__settings">
-          <div id="settings">
-            <h3>SETTINGS</h3>
-            <div class="settings__menu">
-              <p>DISPLAY CALCULATION</p>
-              <button class="ui-btn is-enabled" type="submit">ENABLED</button>
-              <button class="ui-btn" type="submit">DISABLED</button>
-            </div>
+        <section id="settings-panel">
+          <h3>SETTINGS</h3>
+          <div class="settings-panel__menu">
+            <p>DISPLAY CALCULATION</p>
+            <button class="ui-btn is-selected" type="button" data-display="enabled">ENABLED</button>
+            <button class="ui-btn" type="button" data-display="disabled">DISABLED</button>
           </div>
         </section>
       </main>

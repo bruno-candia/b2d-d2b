@@ -1,4 +1,4 @@
-export interface State {
+export interface ConversionStateType {
   type: CONVERSION_TYPE;
   input: string;
   result: string;

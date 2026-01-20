@@ -1,7 +1,7 @@
-import { CONVERSION_TYPE, type State } from '../../types/ConversionType';
+import { CONVERSION_TYPE, type ConversionStateType } from '../../types/ConversionType';
 
 export class ConversionState {
-  private _state: State = {
+  private _state: ConversionStateType = {
     type: CONVERSION_TYPE.DECIMAL_TO_BINARY,
     input: '',
     result: '',

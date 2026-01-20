@@ -2,7 +2,7 @@ import type { ConversionState } from '../services/state/ConversionState';
 import { CONVERSION_TYPE } from '../types/ConversionType';
 import { updateTitle } from '../utils/updateTitle';
 
-export class CalculationForm {
+export class ConverterInput {
   private formElement: HTMLFormElement | null;
   private formTitle: HTMLHeadingElement | null;
   private valueInput: HTMLInputElement | null;
