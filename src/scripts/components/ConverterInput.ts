@@ -20,9 +20,21 @@ export class ConverterInput {
     if (!this.formElement) return;
     this.bindEvents();
     this.conversionState.subscribeToType((newType) => {
-      if (!this.formTitle) return;
-      updateTitle(this.formTitle, newType);
+      if (this.formTitle) {
+        updateTitle(this.formTitle, newType);
+      }
+      this.clearInput();
     });
+
+    this.conversionState.subscribeToInput((newInput) => {
+      this.updateInputValue(newInput);
+    });
+  }
+
+  private clearInput(): void {
+    if (this.valueInput) {
+      this.valueInput.value = '';
+    }
   }
 
   private bindEvents(): void {
@@ -63,5 +75,10 @@ export class ConverterInput {
     if (!fieldValue) return;
 
     this.conversionState.setInput(fieldValue);
+  }
+
+  private updateInputValue(newInput: string): void {
+    if (!this.valueInput) return;
+    this.valueInput.value = newInput;
   }
 }

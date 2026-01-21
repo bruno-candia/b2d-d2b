@@ -24,19 +24,21 @@ export class ConversionState {
   setType(newType: CONVERSION_TYPE) {
     if (newType && newType != this._state.type) {
       this._state.type = newType;
+      this._state.input = '';
+      this._state.result = '';
       this.notifyType();
     }
   }
 
   setInput(value: string) {
-    if (Number(value) > 0) {
+    if (value !== this._state.input) {
       this._state.input = value;
       this.notifyInput();
     }
   }
 
   setResult(result: string) {
-    if (Number(result) > 0) {
+    if (result !== this._state.result) {
       this._state.result = result;
       this.notifyResult();
     }

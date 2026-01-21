@@ -44,3 +44,13 @@
   text-align: left;
   transform: translate(50%, 50%);
 }
+
+@media (max-width: 768px) {
+  .ui-input {
+    font-size: var(--text-xl);
+  }
+
+  .ui-label {
+    font-size: var(--text-xl);
+  }
+}

@@ -19,3 +19,25 @@
 .terminal__settings {
   border-left: 1px solid var(--color-primary-300);
 }
+
+@media (max-width: 768px) {
+  #terminal {
+    grid-template-columns: 1fr;
+    flex: 1;
+    min-height: 0;
+    padding: var(--space-6);
+    overflow: hidden;
+  }
+
+  .terminal__calculation {
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    padding: 0;
+    border-right: none;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .terminal__settings {
+    border-left: none;
+  }
+}

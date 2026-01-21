@@ -9,6 +9,7 @@
 
   <body>
     <header id="header">
+      <button id="settings-trigger" class="ui-btn">SETTINGS</button>
       <div class="header__container">
         <ul class="header__navigation">
           <li class="header__navigation-item is-active" data-tab="DECIMAL_TO_BINARY">
@@ -24,10 +25,17 @@
       <main id="terminal">
         <section class="terminal__calculation">
           <form id="converter-form">
-            <h3 id="converter-form__title">DECIMAL</h3>
+            <h3 id="converter-form__title" data-title="input-title">DECIMAL</h3>
             <div class="converter-form__container">
               <label for="value" class="ui-label">&&gt;</label>
-              <input class="ui-input" type="text" id="value" name="value" inputmode="numeric" />
+              <input
+                class="ui-input"
+                type="text"
+                id="value"
+                name="value"
+                inputmode="numeric"
+                autocomplete="off"
+              />
               <span class="ui-error"></span>
               <button class="ui-btn" type="submit">CONVERTE</button>
             </div>
@@ -47,7 +55,7 @@
             </div>
           </div>
           <div id="converter-output">
-            <h3 id="converter-output__title">BINARY</h3>
+            <h3 id="converter-output__title" data-title="output-title">BINARY</h3>
             <div class="converter-output__container">
               <p for="value" class="ui-label">&&gt;</p>
               <input
@@ -61,12 +69,18 @@
             </div>
           </div>
         </section>
-        <section id="settings-panel">
-          <h3>SETTINGS</h3>
-          <div class="settings-panel__menu">
-            <p>DISPLAY CALCULATION</p>
-            <button class="ui-btn is-selected" type="button" data-display="enabled">ENABLED</button>
-            <button class="ui-btn" type="button" data-display="disabled">DISABLED</button>
+        <section id="settings-panel" class="settings-modal">
+          <div class="settings-modal__overlay"></div>
+          <div class="settings-modal__content">
+            <h3>SETTINGS</h3>
+            <div class="settings-panel__menu">
+              <p>DISPLAY CALCULATION</p>
+              <button class="ui-btn is-selected" type="button" data-display="enabled">
+                ENABLED
+              </button>
+              <button class="ui-btn" type="button" data-display="disabled">DISABLED</button>
+            </div>
+            <button id="settings-close" class="ui-btn" type="button">CLOSE</button>
           </div>
         </section>
       </main>

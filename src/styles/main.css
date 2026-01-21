@@ -21,15 +21,16 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 h1,
@@ -71,4 +72,32 @@ input::placeholder {
 
 a:hover {
   opacity: 0.8;
+}
+
+input:disabled,
+textarea:disabled {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  body {
+    height: 100dvh;
+    min-height: 100dvh;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  h1 {
+    font-size: var(--text-3xl);
+  }
+  h2 {
+    font-size: var(--text-2xl);
+  }
+  h3 {
+    font-size: var(--text-xl);
+  }
+
+  p,
+  input::placeholder {
+    font-size: var(--text-base);
+  }
 }

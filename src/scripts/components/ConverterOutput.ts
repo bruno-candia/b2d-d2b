@@ -20,13 +20,21 @@ export class ConverterOutput {
     if (!this.resultElement) return;
     this.bindEvents();
     this.conversionState.subscribeToType((newType) => {
-      if (!this.resultTitle) return;
-      updateTitle(this.resultTitle, newType);
+      if (this.resultTitle) {
+        updateTitle(this.resultTitle, newType);
+      }
+      this.clearResult();
     });
 
     this.conversionState.subscribeToResult((newResult) => {
       this.updateResultValue(newResult);
     });
+  }
+
+  private clearResult(): void {
+    if (this.resultInput) {
+      this.resultInput.value = '';
+    }
   }
 
   private bindEvents(): void {
@@ -35,7 +43,6 @@ export class ConverterOutput {
 
   private updateResultValue(newResult: string) {
     if (!this.resultInput) return;
-    console.log(newResult);
     this.resultInput.value = newResult;
   }
 }

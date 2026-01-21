@@ -18,3 +18,9 @@
 .converter-form__container .ui-input {
   flex: 1;
 }
+
+@media (max-width: 768px) {
+  #converter-form {
+    gap: var(--space-4);
+  }
+}

@@ -1,14 +1,103 @@
 #settings-panel {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-12);
-  width: 100%;
-  padding: 0 var(--space-12);
+  display: none;
 }
 
-.settings-panel__menu {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
+@media (max-width: 768px) {
+  #settings-panel {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
+
+  #settings-panel.is-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .settings-modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1;
+  }
+
+  .settings-modal__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    padding: var(--space-12);
+    width: 90%;
+    max-width: 400px;
+    background: var(--color-background);
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(
+        180deg,
+        var(--color-primary-300) 0,
+        #26d52f00 20%,
+        #26d52f00 80%,
+        var(--color-primary-300) 100%
+      )
+      1;
+  }
+
+  .settings-panel__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    width: 100%;
+  }
+
+  #settings-close {
+    margin-top: var(--space-6);
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  #settings-panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    width: 100%;
+    padding: 0 var(--space-12);
+  }
+
+  .settings-modal__overlay {
+    display: none;
+  }
+
+  .settings-modal__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .settings-panel__menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  #settings-close {
+    display: none;
+  }
+
+  #settings-trigger {
+    display: none;
+  }
 }

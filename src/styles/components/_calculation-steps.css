@@ -57,3 +57,20 @@
     )
     1;
 }
+
+@media (max-width: 768px) {
+  #calculation-steps {
+    padding: var(--space-6);
+    min-height: 0;
+    overflow: auto;
+    flex: 1;
+  }
+
+  .calculation-steps__process {
+    flex-direction: column;
+  }
+
+  .calculation-steps__process textarea {
+    min-height: 80px;
+  }
+}

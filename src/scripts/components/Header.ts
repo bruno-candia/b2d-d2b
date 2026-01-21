@@ -35,7 +35,7 @@ export class Header {
 
     const tabType = clickedItem.dataset['tab'];
 
-    if (tabType) {
+    if (tabType && tabType !== this.conversionState.state.type) {
       this.conversionState.setType(tabType as CONVERSION_TYPE);
     }
   }

@@ -18,3 +18,10 @@
   color: var(--terminal-gradient-hover);
   background: var(--terminal-gradient);
 }
+
+@media (max-width: 768px) {
+  .ui-btn {
+    font-size: var(--text-base);
+    padding: var(--space-2) var(--space-3);
+  }
+}

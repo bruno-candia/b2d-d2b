@@ -16,18 +16,26 @@ export class App {
   private calculationSteps: CalculationSteps;
   private converterOutput: ConverterOutput;
   private settingsPanel: SettingsPanel;
+  private calculationService: ConversionCalculationService;
 
   constructor() {
     this.conversionState = new ConversionState();
     this.settingsState = new SettingsState();
 
-    new ConversionCalculationService(this.conversionState);
-
     this.header = new Header(this.conversionState);
     this.converterInput = new ConverterInput(this.conversionState);
-    this.calculationSteps = new CalculationSteps(this.settingsState);
+    this.calculationSteps = new CalculationSteps(this.settingsState, this.conversionState);
     this.converterOutput = new ConverterOutput(this.conversionState);
     this.settingsPanel = new SettingsPanel(this.settingsState);
+
+    this.calculationService = new ConversionCalculationService(
+      this.conversionState,
+      this.settingsState,
+    );
+
+    this.calculationService.setOnStepsGenerated((steps, finalResult) => {
+      this.calculationSteps.displayStepsAnimated(steps, finalResult);
+    });
   }
 
   hydrate(): void {
